@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modo Wallet | Smart, Classic & Premium</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo">MODO</a>
+
+      <nav class="menu" id="menu">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#products" data-i18n="navProducts">Products</a>
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#reviews" data-i18n="navReviews">Reviews</a>
+        <a href="#checkout" data-i18n="navCheckout">Checkout</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="langToggle">العربية</button>
+        <button class="btn cart-btn" onclick="scrollToCheckout()">
+          <span data-i18n="cart">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn btn-outline mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge" data-i18n="heroBadge">100% Natural Egyptian Leather</span>
+          <h1 data-i18n="heroTitle">Elegant wallets made for everyday life.</h1>
+          <p data-i18n="heroText">Discover Modo wallets crafted from natural Egyptian leather, with Bluetooth smart tracking in selected models and a premium professional look.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-gold" data-i18n="shopNow">Shop Now</a>
+            <a href="https://wa.me/201220597999" target="_blank" class="btn btn-outline" data-i18n="whatsappUs">WhatsApp Us</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="smart-wallet.jpg" alt="Modo Smart Wallet" />
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-i18n="productsTitle">Our Products</h2>
+          <p data-i18n="productsText">Choose the Modo wallet that fits your lifestyle.</p>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-i18n="featuresTitle">Why Modo?</h2>
+          <p data-i18n="featuresText">Designed for elegance, comfort, and practical daily use.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="card">
+            <h3 data-i18n="feature1Title">Natural Egyptian Leather</h3>
+            <p data-i18n="feature1Text">All Modo wallets are made from 100% natural Egyptian leather.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature2Title">Bluetooth Smart Connection</h3>
+            <p data-i18n="feature2Text">Smart and Premium models connect to your phone using Bluetooth.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature3Title">Out-of-Range Alert</h3>
+            <p data-i18n="feature3Text">Your phone can notify you when the wallet goes out of range.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="feature4Title">Alarm Sound</h3>
+            <p data-i18n="feature4Text">Make the wallet ring when it is hidden or lost nearby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-i18n="reviewsTitle">Customer Reviews</h2>
+          <p data-i18n="reviewsText">What customers love about Modo Wallet.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="review1Text">Very elegant wallet and the leather quality is excellent.</p>
+            <div class="review-name" data-i18n="review1Name">Ahmed M.</div>
+          </div>
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="review2Text">The smart features are useful, especially the alarm and notification.</p>
+            <div class="review-name" data-i18n="review2Name">Omar H.</div>
+          </div>
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="review3Text">Beautiful design, professional feel, and very good for gifts.</p>
+            <div class="review-name" data-i18n="review3Name">Youssef A.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout">
+      <div class="container checkout-grid">
+        <div class="checkout-card">
+          <h2 data-i18n="checkoutTitle">Checkout</h2>
+          <div id="cartItems"></div>
+
+          <div class="summary-row">
+            <span data-i18n="subtotal">Subtotal</span>
+            <strong id="subtotal">0 EGP</strong>
+          </div>
+          <div class="summary-row">
+            <span data-i18n="delivery">Delivery</span>
+            <strong id="delivery">100 EGP</strong>
+          </div>
+          <div class="summary-row total">
+            <span data-i18n="total">Total</span>
+            <strong id="total">0 EGP</strong>
+          </div>
+        </div>
+
+        <div class="checkout-card">
+          <form id="checkoutForm">
+            <div class="form-row">
+              <div>
+                <label for="customerName" data-i18n="nameLabel">Full Name</label>
+                <input type="text" id="customerName" required />
+              </div>
+              <div>
+                <label for="customerPhone" data-i18n="phoneLabel">Phone Number</label>
+                <input type="tel" id="customerPhone" required />
+              </div>
+            </div>
+
+            <label for="customerCity" data-i18n="cityLabel">City / Area</label>
+            <input type="text" id="customerCity" required />
+
+            <label for="customerAddress" data-i18n="addressLabel">Address</label>
+            <textarea id="customerAddress" required></textarea>
+
+            <label for="customerNotes" data-i18n="notesLabel">Notes</label>
+            <textarea id="customerNotes"></textarea>
+
+            <button type="submit" class="btn btn-gold" data-i18n="sendOrder">Send Order on WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footerText">© 2026 Modo Wallet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/201220597999" target="_blank" aria-label="WhatsApp">☏</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
